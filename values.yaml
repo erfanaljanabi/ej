@@ -53,8 +53,7 @@ controller:
     pullPolicy: "Always"
 
   # -- Number of replicas. Max 1. Can be set to 0 for maintenance scenarios.
-  replicas: 3
-
+  replicas: 16
   # -- Controller image pull secret
   imagePullSecretName:
   # -- Lifecycle specification for controller-container
