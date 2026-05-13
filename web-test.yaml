@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-test
+  template:
+    metadata:
+      labels:
+        app: web-test
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo '<!DOCTYPE html>
+              <html>
+              <head>
+                <title>Erfan Aljanabi</title>
+                <style>
+                  body { font-family: Arial; text-align: center; padding: 50px; background:#f4f4f4; }
+                  h1 { color: #333; }
+                </style>
+              </head>
+              <body>
+                <h1>Erfan Aljanabi</h1>
+                <p>Linux | AWS | Kubernetes | System Test Engineering</p>
+                <p>Running on Nginx inside Kubernetes</p>
+              </body>
+              </html>' > /usr/share/nginx/html/index.html
+              nginx -g "daemon off;"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-test-service
+spec:
+  selector:
+    app: web-test
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer   # Use NodePort if on Minikube
