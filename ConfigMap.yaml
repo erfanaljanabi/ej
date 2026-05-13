@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-index-config
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Hello Erfan from Kubernetes Deployment</h1>
+      <p>This page is coming from a ConfigMap.</p>
+    </body>
+    </html>

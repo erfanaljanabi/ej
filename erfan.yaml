@@ -1,0 +1,6 @@
+apiVersion: demo.local/v1
+kind: Erfan
+metadata:
+  name: my-erfan
+spec:
+  message: "Hello from Erfan CRD"

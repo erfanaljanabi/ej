@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ej-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-ej
+  template:
+    metadata:
+      labels:
+        app: nginx-ej
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+
+          volumeMounts:
+            - name: nginx-index-volume
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+
+            - name: nginx-storage
+              mountPath: /data
+
+      volumes:
+        - name: nginx-index-volume
+          configMap:
+            name: nginx-index-config
+
+        - name: nginx-storage
+          persistentVolumeClaim:
+            claimName: nginx-pvc
