@@ -1,1 +1,0 @@
-Jenkins --> Search for official jenkins Helm CHart repo --> Pull the repo locally into  your Mac --> untar the tar file --> Deploy Jenkins in jenkins namespace from your local --> create a CNAME record for jenkins.erfan-us.info --> expose jenkins.erfan-us.info publicly --> Send me the link

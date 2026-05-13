@@ -1,2 +1,0 @@
-LAYER 4 (access through IP): pod --> service (loadBalancer) --> Public IPv4
-LAYER 7 (access through hostname): pod --> service --> ingress --> ingress controller (e.g. nginx)  --> dns-godaddy --> a record (ingress IP)  --> public
