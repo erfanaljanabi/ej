@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  annotations: {}
+  name: erfan-web-gateway
+  namespace: web
+spec:
+  selector:
+    istio: ingress
+  servers:
+    - hosts:
+        - resume.erfan-us.info
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    - hosts:
+        - resume.erfan-us.info
+      port:
+        name: https
+        number: 443
+        protocol: HTTPS
+      tls:
+        credentialName: erfan-resume-tls
+        mode: SIMPLE
