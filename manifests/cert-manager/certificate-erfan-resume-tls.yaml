@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  annotations: {}
+  name: erfan-resume-tls
+  namespace: istio-ingress
+spec:
+  dnsNames:
+    - resume.erfan-us.info
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  secretName: erfan-resume-tls

@@ -1,0 +1,4 @@
+
+# Unencrypted Kubernetes Secret manifests
+manifests/secrets/*.yaml
+manifests/secrets/*.yml

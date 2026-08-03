@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  annotations: {}
+  name: erfan-resume
+  namespace: web
+spec:
+  gateways:
+    - erfan-web-gateway
+  hosts:
+    - resume.erfan-us.info
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: erfan-resume.web.svc.cluster.local
+            port:
+              number: 80
