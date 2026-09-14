@@ -6,6 +6,5 @@ resources:
   - configmap-content.yaml
   - deployment.yaml
   - service.yaml
-  - managed-certificate.yaml
-  - frontendconfig.yaml
-  - ingress.yaml
+  - gateway.yaml
+  - virtualservice.yaml

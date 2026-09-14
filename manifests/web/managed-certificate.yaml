@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: erfan-resume-cert
+  namespace: web
+spec:
+  domains:
+    - resume.erfan-us.info
