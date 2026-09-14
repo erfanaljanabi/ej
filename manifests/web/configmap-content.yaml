@@ -419,8 +419,7 @@ data:
           <div class="shell">
             <div class="section-heading">
               <h2>Education &amp; Certifications</h2>
-              <span class="section-note">Professional education and industry credentials</span>
-            </div>
+                </div>
 
             <div class="grid-two">
               <article class="panel">
@@ -541,8 +540,7 @@ data:
           <div class="shell">
             <div class="section-heading">
               <h2>Technical Skills</h2>
-              <span class="section-note">Platforms, tools and engineering capabilities</span>
-            </div>
+                </div>
 
             <div class="panel">
               <table class="skills">
